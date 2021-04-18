@@ -18,7 +18,6 @@
             <video src="/videos/video2.mp4" autoplay muted loop></video>
             <video src="/videos/video3.mp4" autoplay muted loop></video>
             <video src="/videos/video3.mp4" autoplay muted loop></video>
-
         </div>
         <div class="container">
             <header id="navbar">
@@ -31,7 +30,7 @@
                 </ul>
             </header>
             <div class="content">
-                <div class="bannerText">
+                <div class="bannerText" class="slideShowText">
                     <div class="active">
                         <h2>Lago Atitlan</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, praesentium, animi numquam quisquam hic fugiat asperiores iste qui officiis cum doloremque impedit! Sit fuga obcaecati distinctio consequatur nesciunt molestias optio!</p>
@@ -56,11 +55,42 @@
                 <li><a href="#"><img src="instagram.png"></a></li>
             </ul>
             <ul class="controls">
-                <li><img src="left.png" alt="izquierda"></li>
-                <li><img src="right.png" alt="derecha"></li>
+                <li onclick="prevSlide();"><img src="left.png" alt="izquierda"></li>
+                <li onclick="nextSlide();"><img src="right.png" alt="derecha"></li>
             </ul>
         </div>
     </section>
-    
-    
+    <script>
+        const slideshow = document.getElementById('slideshow');
+        const slides = slideShow.getElementByTagName('video');
+        var index = 0;
+
+            function nextSlide(){
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }
+            function prevSlide(){
+                slides[index].classList.remove('active');
+                index = (index - 1 + slides.length) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+
+
+        const slideshow = document.getElementById('slideshow');
+        const slides = slideShow.getElementByTagName('video');
+        var index = 0;
+            function nextSlide(){
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }
+            function prevSlide(){
+                slides[index].classList.remove('active');
+                index = (index - 1 + slides.length) % slides.length;
+                slides[index].classList.add('active');
+            }
+    </script>
 </body>
+</html>
