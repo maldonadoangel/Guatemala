@@ -45,7 +45,7 @@ section .bannerVideo video.active{
     left: 0;
     width: 50%;
     height: 100%;
-    backdrop-filter: blur(13px);
+    backdrop-filter: blur(11px);
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.05);
 }
 
